@@ -1,0 +1,25 @@
+:local(.header) {
+  height: 10vh;
+  background: black;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    a {
+      text-decoration: none;
+      color: lightgreen;
+      margin: 15px;
+      font-size: 1.25em;
+    }
+  }
+  
+  button {
+    background: none;
+    border: none;
+    color: lightgreen;
+    font-size: 1.5em;
+    margin: 15px;
+  }
+}

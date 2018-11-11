@@ -1,0 +1,7 @@
+:local(.about) {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  background: white;
+  color: black;
+}

@@ -1,0 +1,41 @@
+:local(.menu) {
+
+  .menu-closed {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    transition: 0.5s;
+    overflow-y: hidden;
+    z-index: 1;
+    /* top: 10vh; */
+    /* left: 0; */
+  }
+
+  .menu-open {
+    height: 90vh;
+    width: 100%;
+    position: fixed;
+    transition: 0.5s;
+    overflow-y: hidden;
+    z-index: 1;
+    /* top: 10vh; */
+    /* left: 0; */
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    background: black;
+  }
+
+  a {
+    color: white;
+    font-size: 1.25em;
+    margin: 15px;
+  }
+  
+  a:hover {
+    cursor: pointer;
+  }
+ 
+}

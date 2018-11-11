@@ -2,5 +2,23 @@
   header {
     text-align: center;
   }
+
+  .menu-closed {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    transition: 0.5s;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+
+  .menu-open {
+    height: 90vh;
+    width: 100%;
+    position: fixed;
+    transition: 0.5s;
+    overflow-y: hidden;
+    z-index: 1;
+  }
   
 }

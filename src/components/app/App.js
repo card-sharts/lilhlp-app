@@ -31,13 +31,16 @@ class App extends PureComponent {
             home={this.home}
             menu={menu}
           />
-          <Menu menu={menu}/>
+          <div className={menu ? 'menu-open' : 'menu-closed'}>
+            <Menu menu={menu}/>
+          </div>
           <main>
             <Switch>
               <Route exact path="/" component={Landing}/>
               {/* <Route path="/about" component={About}/>
               <Route path="/drive" component={Drive}/>
               <Route path="/ride" component={Ride}/> */}
+              <Redirect to="/"></Redirect>
             </Switch>
           </main>
           <footer></footer>

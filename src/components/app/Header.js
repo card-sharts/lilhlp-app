@@ -16,9 +16,7 @@ class Header extends PureComponent {
     const { menu, onClick, home } = this.props;
     return (
       <header className={styles.header}>
-        <h1>
-          <Link onClick={home} to="/">lilhlp</Link>
-        </h1>
+        <Link onClick={home} to="/">lilhlp</Link>
         {menu 
           ? <button id="x-mark" onClick={onClick}>&#x2715;</button>
           : <button id="hamburger" onClick={onClick}>&#9776;</button>

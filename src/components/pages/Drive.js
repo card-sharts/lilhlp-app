@@ -6,7 +6,7 @@ class Drive extends PureComponent {
   render() { 
     return (
       <div className={styles.drive}>
-        <h2>Drive Page</h2>
+        <h2>Drive Menu</h2>
       </div>
     );
   }

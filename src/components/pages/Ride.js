@@ -6,7 +6,7 @@ class Ride extends PureComponent {
   render() { 
     return (
       <div className={styles.ride}>
-        <h2>Ride Page</h2>
+        <h2>Ride Menu</h2>
       </div>
     );
   }

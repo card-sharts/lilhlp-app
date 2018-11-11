@@ -7,7 +7,7 @@ class Landing extends PureComponent {
     return (
       <div className={styles.landing}>
         <header>
-          <h2>About</h2>
+          <h2>Landing Page</h2>
         </header>
         <main>
         </main>

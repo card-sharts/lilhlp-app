@@ -6,86 +6,56 @@ import Ride from '../pages/Ride';
 import styles from './Menu.css';
 
 class Menu extends PureComponent {
-  state = {
-    about: true,
-    drive: false,
-    ride: false
-  };
+  state = {};
 
   static propTypes = {
-    menu: PropTypes.bool.isRequired
+    menu: PropTypes.bool.isRequired,
+    options: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired
   };
 
-  componentDidUpdate(prevProps) {
-    if(this.props.menu !== prevProps.menu) {
-      setTimeout(() => {
-        this.setState({
-          about: true,
-          drive: false,
-          ride: false
-        });
-      }, 500);
-    }
-  }
+  render() {  
+    const { about, drive, ride } = this.props.options;
+    const { onClick } = this.props;
 
-  renderAbout = () => {
-    this.setState({
-      about: true,
-      drive: false,
-      ride: false
-    });
-  };
-
-  renderDrive = () => {
-    this.setState({
-      about: false,
-      drive: true,
-      ride: false
-    });
-  };
-
-  renderRide = () => {
-    this.setState({
-      about: false,
-      drive: false,
-      ride: true
-    });
-  };
-
-  render() { 
-    const { about, drive, ride } = this.state;
     return (
       <div className={styles.menu}>
         <nav>
           <a 
-            onClick={this.renderAbout} 
+            onClick={() => onClick({
+              about: true,
+              drive: false,
+              ride: false
+            })} 
             style={about ? { borderBottom: 'solid thin lightgreen' } : null }
           >
             ABOUT
           </a>
           <a 
-            onClick={this.renderDrive} 
+            onClick={() => onClick({
+              about: false,
+              drive: true,
+              ride: false
+            })} 
             style={drive ? { borderBottom: 'solid thin lightgreen' } : null }
           >
             DRIVE
           </a>
           <a 
-            onClick={this.renderRide} 
+            onClick={() => onClick({
+              about: false,
+              drive: false,
+              ride: true
+            })} 
             style={ride ? { borderBottom: 'solid thin lightgreen' } : null }
           >
             RIDE
           </a>
         </nav>
         <section>
-          {about &&
-            <About/>
-          }
-          {drive &&
-            <Drive/>
-          }
-          {ride &&
-            <Ride/>
-          }
+          {about && <About/>}
+          {drive && <Drive/>}
+          {ride && <Ride/>}
         </section>
       </div> 
     );

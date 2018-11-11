@@ -7,20 +7,57 @@ class Header extends PureComponent {
   state = {};
 
   static propTypes = {
+    onToggle: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
+    options: PropTypes.object,
     menu: PropTypes.bool.isRequired,
-    home: PropTypes.func.isRequired
   };
 
   render() {
-    const { menu, onClick, home } = this.props;
+    const { about, drive, ride } = this.props.options;
+    const { menu, onToggle, onClick } = this.props;
     return (
       <header className={styles.header}>
-        <Link onClick={home} to="/">lilhlp</Link>
-        {menu 
-          ? <button id="x-mark" onClick={onClick}>&#x2715;</button>
-          : <button id="hamburger" onClick={onClick}>&#9776;</button>
-        }
+        <Link onClick={() => onToggle(false)} to="/">LILHLP</Link>
+        <nav>
+          <div className='desktop-nav'>
+            <a 
+              onClick={() => onClick({
+                about: true,
+                drive: false,
+                ride: false
+              })}
+              style={about ? { borderBottom: 'solid thin lightgreen' } : null }
+            >
+              ABOUT
+            </a>
+            <a
+              onClick={() => onClick({
+                about: false,
+                drive: true,
+                ride: false
+              })} 
+              style={drive ? { borderBottom: 'solid thin lightgreen' } : null }
+            >
+              DRIVE
+            </a>
+            <a 
+              onClick={() => onClick({
+                about: false,
+                drive: false,
+                ride: true
+              })}
+              style={ride ? { borderBottom: 'solid thin lightgreen' } : null }
+            >
+              RIDE
+            </a>
+          </div>
+          {menu 
+            ? <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
+            : <button id="hamburger" onClick={() => onToggle(true)}>&#9776;</button>
+          }
+        </nav>
+        <Link id="login" to="login">LOG IN</Link>
       </header>
     );
   }

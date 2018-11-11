@@ -3,43 +3,69 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Header from './Header';
 import Landing from './Landing';
 import Menu from './Menu';
-import About from '../pages/About';
-import Drive from '../pages/Drive';
-import Ride from '../pages/Ride';
 import styles from './App.css';
 
 class App extends PureComponent {
   state = {
-    menu: false
+    menu: false,
+    options: {
+      about: null,
+      drive: null,
+      ride: null
+    } 
   };
 
-  toggleMenu = () => {
-    this.setState(({ menu }) => ({ menu: !menu }));
+  toggleMenu = menu => {
+    if(!menu) {
+      this.setState({ menu: false });
+      setTimeout(() => this.setState({
+        options: {
+          about: null,
+          drive: null,
+          ride: null
+        }
+      }), 500);
+    }
+    else { 
+      this.setState({ 
+        menu: true,
+        options: {
+          about: true,
+          drive: false,
+          ride: false
+        }
+      });
+    }
   };
 
-  home = () => {
-    this.setState({ menu: false });
+  updateMenuOptions = options => {
+    this.setState({
+      menu: true, 
+      options 
+    });
   };
 
   render() { 
-    const { menu } = this.state;
+    const { menu, options } = this.state;
     return (
       <Router>
         <div className={styles.app}>
           <Header 
-            onClick={this.toggleMenu} 
-            home={this.home}
+            onToggle={this.toggleMenu} 
+            onClick={this.updateMenuOptions}
             menu={menu}
+            options={options}
           />
           <div className={menu ? 'menu-open' : 'menu-closed'}>
-            <Menu menu={menu}/>
+            <Menu 
+              onClick={this.updateMenuOptions}
+              menu={menu}
+              options={options}
+            />
           </div>
           <main>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              {/* <Route path="/about" component={About}/>
-              <Route path="/drive" component={Drive}/>
-              <Route path="/ride" component={Ride}/> */}
               <Redirect to="/"></Redirect>
             </Switch>
           </main>

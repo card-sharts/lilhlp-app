@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Landing from './Landing';
-import Menu from './Menu';
+import Menu from '../menu/Menu';
+import Auth from '../auth/Auth';
 import styles from './App.css';
 
 class App extends PureComponent {
@@ -59,6 +60,7 @@ class App extends PureComponent {
           <div className={menu ? 'menu-open' : 'menu-closed'}>
             <Menu 
               onClick={this.updateMenuOptions}
+              onToggle={this.toggleMenu}
               menu={menu}
               options={options}
             />
@@ -66,6 +68,7 @@ class App extends PureComponent {
           <main>
             <Switch>
               <Route exact path="/" component={Landing}/>
+              <Route exact path="/login" component={Auth}/>
               <Redirect to="/"></Redirect>
             </Switch>
           </main>

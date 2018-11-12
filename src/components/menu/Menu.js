@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import About from '../pages/About';
-import Drive from '../pages/Drive';
-import Ride from '../pages/Ride';
+import About from './About';
+import Drive from './Drive';
+import Ride from './Ride';
 import styles from './Menu.css';
 
 class Menu extends PureComponent {
@@ -11,12 +11,13 @@ class Menu extends PureComponent {
   static propTypes = {
     menu: PropTypes.bool.isRequired,
     options: PropTypes.object.isRequired,
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
+    onToggle: PropTypes.func.isRequired
   };
 
   render() {  
     const { about, drive, ride } = this.props.options;
-    const { onClick } = this.props;
+    const { onClick, onToggle } = this.props;
 
     return (
       <div className={styles.menu}>
@@ -27,7 +28,7 @@ class Menu extends PureComponent {
               drive: false,
               ride: false
             })} 
-            style={about ? { borderBottom: 'solid thin lightgreen' } : null }
+            style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
           >
             ABOUT
           </a>
@@ -37,7 +38,7 @@ class Menu extends PureComponent {
               drive: true,
               ride: false
             })} 
-            style={drive ? { borderBottom: 'solid thin lightgreen' } : null }
+            style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
           >
             DRIVE
           </a>
@@ -47,15 +48,15 @@ class Menu extends PureComponent {
               drive: false,
               ride: true
             })} 
-            style={ride ? { borderBottom: 'solid thin lightgreen' } : null }
+            style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
           >
             RIDE
           </a>
         </nav>
         <section>
-          {about && <About/>}
-          {drive && <Drive/>}
-          {ride && <Ride/>}
+          {about && <About onToggle={onToggle}/>}
+          {drive && <Drive onToggle={onToggle}/>}
+          {ride && <Ride onToggle={onToggle}/>}
         </section>
       </div> 
     );

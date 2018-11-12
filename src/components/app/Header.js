@@ -18,7 +18,7 @@ class Header extends PureComponent {
     const { menu, onToggle, onClick } = this.props;
     return (
       <header className={styles.header}>
-        <Link onClick={() => onToggle(false)} to="/">LILHLP</Link>
+        <Link id="logo" onClick={() => onToggle(false)} to="/">LILHLP</Link>
         <nav>
           <div className='desktop-nav'>
             <a 
@@ -27,7 +27,7 @@ class Header extends PureComponent {
                 drive: false,
                 ride: false
               })}
-              style={about ? { borderBottom: 'solid thin lightgreen' } : null }
+              style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
             >
               ABOUT
             </a>
@@ -37,7 +37,7 @@ class Header extends PureComponent {
                 drive: true,
                 ride: false
               })} 
-              style={drive ? { borderBottom: 'solid thin lightgreen' } : null }
+              style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
             >
               DRIVE
             </a>
@@ -47,7 +47,7 @@ class Header extends PureComponent {
                 drive: false,
                 ride: true
               })}
-              style={ride ? { borderBottom: 'solid thin lightgreen' } : null }
+              style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
             >
               RIDE
             </a>

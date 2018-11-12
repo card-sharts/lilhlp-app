@@ -1,7 +1,0 @@
-:local(.ride) {
-  display: flex;
-  height: 90vh;
-  justify-content: center;
-  background: lightgreen;
-  color: black;
-}

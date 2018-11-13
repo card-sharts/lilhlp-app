@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import styles from './Form.css';
+
 
 class DriverForm extends PureComponent {
   state = {
@@ -10,7 +12,7 @@ class DriverForm extends PureComponent {
     city: ''
   };
 
-  onChange = ({ target }) => {
+  handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
 
@@ -25,7 +27,8 @@ class DriverForm extends PureComponent {
     } = this.state;
 
     return (
-      <div>
+      <div className={styles.form}>
+        <h2>Become a <span>lilhlp</span> driver</h2>
         <form>
           <input
             name="email"
@@ -69,6 +72,7 @@ class DriverForm extends PureComponent {
             placeholder="city"
             required
           />
+          <button>Submit</button>
         </form>
       </div>
     );

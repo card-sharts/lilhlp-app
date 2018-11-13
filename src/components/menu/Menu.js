@@ -17,10 +17,6 @@ class Menu extends PureComponent {
         name: 'Safety First',
         link: '/about'
       },
-      {
-        name: 'Careers',
-        link: '/about'
-      }
     ],
     driveMenu: [
       {

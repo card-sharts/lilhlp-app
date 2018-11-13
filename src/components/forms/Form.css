@@ -1,20 +1,23 @@
-:local(.auth) {
-  
-  margin: 5vh auto;
-  width: 80vw;
-  /* padding: 0 10vw 0 10vw; */
+:local(.form) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
+
+  span {
+    color: #08d9d6;
+  }
 
   form {
-    background: #252a34;
-    border: 1px solid #252a34;
     display: flex;
-    padding: 10px;
     flex-direction: column;
     justify-content: center;
+    width: 80vw;
+    margin-top: 1vh;
+    background: #252a34;
+    border: 1px solid #252a34;
+    padding: 20px;
     align-items: center;
     box-shadow: 5px 5px #eeeeee;
 
@@ -23,14 +26,12 @@
       font-size: 1.5em;
       margin-bottom: 10px;
       border: 1px solid black;
-      /* border-radius: 10px; */
     }
 
     button {
       width: 50%;
       font-size: 1.5em;
       border: 1px solid #08d9d6;
-      /* border-radius: 10px; */
       background: #08d9d6;
       color: #252a34;
       margin-top: 10px;
@@ -56,5 +57,4 @@
       margin-bottom: 15px;
     }
   }
-
 }

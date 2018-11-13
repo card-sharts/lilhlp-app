@@ -7,7 +7,8 @@ import Auth from '../auth/Auth';
 import About from '../about/About';
 import Drive from '../drive/Drive';
 import Ride from '../ride/Ride';
-import DriverForm from '../auth/DriverForm';
+import DriverForm from '../forms/DriverForm';
+import RiderForm from '../forms/RiderForm';
 import styles from './App.css';
 
 class App extends PureComponent {
@@ -63,6 +64,7 @@ class App extends PureComponent {
               <Route exact path="/drive" component={Drive}/>
               <Route exact path="/ride" component={Ride}/>
               <Route exact path="/driver/signup" component={DriverForm}/>
+              <Route exact path="/rider/signup" component={RiderForm}/>
               <Redirect to="/"></Redirect>
             </Switch>
           </main>

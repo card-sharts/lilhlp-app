@@ -6,6 +6,7 @@ import Menu from '../menu/Menu';
 import Auth from '../auth/Auth';
 import About from '../about/About';
 import Drive from '../drive/Drive';
+import Drivers from '../drivers/Drivers';
 import Ride from '../ride/Ride';
 import DriverForm from '../forms/DriverForm';
 import RiderForm from '../forms/RiderForm';
@@ -60,7 +61,8 @@ class App extends PureComponent {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route exact path="/login" component={Auth}/>
-              <Route exact path="/about" component={About}/>
+              <Route path="/about" component={About}/>
+              <Route exact path="/about/drivers" component={Drivers}/>
               <Route exact path="/drive" component={Drive}/>
               <Route exact path="/ride" component={Ride}/>
               <Route exact path="/driver/signup" component={DriverForm}/>

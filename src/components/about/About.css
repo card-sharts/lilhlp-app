@@ -30,4 +30,8 @@
   button:hover {
     border-color: black;
   }
+
+  img {
+    width: 100%;
+  }
 }

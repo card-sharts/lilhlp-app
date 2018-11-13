@@ -1,0 +1,60 @@
+:local(.auth) {
+  
+  margin: 5vh auto;
+  width: 80vw;
+  /* padding: 0 10vw 0 10vw; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    background: #252a34;
+    border: 1px solid #252a34;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px #eeeeee;
+
+    input {
+      padding-left: 10px;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      /* border-radius: 10px; */
+    }
+
+    button {
+      width: 50%;
+      font-size: 1.5em;
+      border: 1px solid #08d9d6;
+      /* border-radius: 10px; */
+      background: #08d9d6;
+      color: #252a34;
+      margin-top: 10px;
+    }
+  }
+
+  .signup-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    h3 {
+      margin-bottom: 10px;
+    }
+    a {
+      text-align: center;
+      width: 100%;
+      color: #eeeeee;
+      padding: 10px;
+      background: #252a34;
+      border: 1px solid black;
+      margin-bottom: 15px;
+    }
+  }
+
+}

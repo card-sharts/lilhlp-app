@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import styles from './Auth.css';
 
 class Auth extends PureComponent {
   state = {
@@ -8,10 +8,15 @@ class Auth extends PureComponent {
     password: ''
   };
 
-  render() {
-    const { email, password } = this.state; 
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  render() { 
+    const { email, password } = this.state;
+
     return (
-      <section>
+      <div className={styles.auth}>
         <form>
           <input
             name="email"
@@ -28,9 +33,14 @@ class Auth extends PureComponent {
             placeholder="password"
             required
           />
-          <button>Sign In</button>
+          <button>Log in</button>
         </form>
-      </section>
+        <div className="signup-links">
+          <h3>Don&apos;t have an account?</h3>
+          <Link to="/driver/signup">Sign up to drive</Link>
+          <Link to="/rider/signup">Sign up to ride</Link>
+        </div>
+      </div>
     );
   }
 }

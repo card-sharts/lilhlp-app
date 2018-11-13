@@ -21,14 +21,13 @@
   #logo {
     color: #08d9d6;
     font-size: 1.5em;
-    /* margin-left: 30px; */
   }
 
-  /* #login {
-    margin-right: 30px;
-  } */
-
   button {
+    display: none;
+  }
+
+  #mobile-view-login {
     display: none;
   }
 
@@ -49,13 +48,17 @@
       color: #08d9d6;
     }
 
+    #mobile-view-login {
+      display: initial
+    }
+
     button {
       display: initial;
       background: none;
       border: none;
       color: white;
       font-size: 1.5em;
-      margin: 15px;
+      margin: 0 15px 0 0;
     }
   
     button:focus {

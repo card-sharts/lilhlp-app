@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import About from './About';
 import Drive from './Drive';
 import Ride from './Ride';
+import Login from './Login';
 import styles from './Menu.css';
 
 class Menu extends PureComponent {
@@ -23,31 +24,19 @@ class Menu extends PureComponent {
       <div className={styles.menu}>
         <nav>
           <a 
-            onClick={() => onClick({
-              about: true,
-              drive: false,
-              ride: false
-            })} 
+            onClick={() => onClick({ about: true })} 
             style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
           >
             ABOUT
           </a>
           <a 
-            onClick={() => onClick({
-              about: false,
-              drive: true,
-              ride: false
-            })} 
+            onClick={() => onClick({ drive: true })} 
             style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
           >
             DRIVE
           </a>
           <a 
-            onClick={() => onClick({
-              about: false,
-              drive: false,
-              ride: true
-            })} 
+            onClick={() => onClick({ ride: true })} 
             style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
           >
             RIDE

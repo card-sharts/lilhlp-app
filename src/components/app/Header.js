@@ -14,7 +14,7 @@ class Header extends PureComponent {
   };
 
   render() {
-    const { about, drive, ride } = this.props.options;
+    const { about, drive, ride, login } = this.props.options;
     const { menu, onToggle, onClick } = this.props;
     return (
       <header className={styles.header}>
@@ -22,31 +22,19 @@ class Header extends PureComponent {
         <nav>
           <div className='desktop-nav'>
             <a 
-              onClick={() => onClick({
-                about: true,
-                drive: false,
-                ride: false
-              })}
+              onClick={() => onClick({ about: true })}
               style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
             >
               ABOUT
             </a>
             <a
-              onClick={() => onClick({
-                about: false,
-                drive: true,
-                ride: false
-              })} 
+              onClick={() => onClick({ drive: true })} 
               style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
             >
               DRIVE
             </a>
             <a 
-              onClick={() => onClick({
-                about: false,
-                drive: false,
-                ride: true
-              })}
+              onClick={() => onClick({ ride: true })}
               style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
             >
               RIDE
@@ -54,10 +42,25 @@ class Header extends PureComponent {
           </div>
           {menu 
             ? <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
-            : <button id="hamburger" onClick={() => onToggle(true)}>&#9776;</button>
+            : <div>
+              <Link
+                to="/login" 
+                id="mobile-view-login"
+                style={login ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+              >
+                LOG IN
+              </Link>
+              <button id="hamburger" onClick={() => onToggle(true)}>&#9776;</button>
+            </div>
           }
         </nav>
-        <Link id="login" to="login">LOG IN</Link>
+        <Link
+          to="/login" 
+          id="login"
+          style={login ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+        >
+          LOG IN
+        </Link>
       </header>
     );
   }

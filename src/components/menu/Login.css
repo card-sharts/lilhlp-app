@@ -1,10 +1,9 @@
-:local(.about) {
-
+:local(.login) {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  /* position: relative; */
   height: 90vh;
   background: #eeeeee;
   color: black;
@@ -30,10 +29,6 @@
 
   button:active {
     font-size: 1.75em;
-  }
-
-  h2:hover {
-    cursor: pointer;
   }
 
   @media screen and (max-width: 600px) {

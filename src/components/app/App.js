@@ -9,32 +9,18 @@ import styles from './App.css';
 class App extends PureComponent {
   state = {
     menu: false,
-    options: {
-      about: null,
-      drive: null,
-      ride: null
-    } 
+    options: {} 
   };
 
   toggleMenu = menu => {
     if(!menu) {
       this.setState({ menu: false });
-      setTimeout(() => this.setState({
-        options: {
-          about: null,
-          drive: null,
-          ride: null
-        }
-      }), 500);
+      setTimeout(() => this.setState({ options: {} }), 500);
     }
     else { 
       this.setState({ 
         menu: true,
-        options: {
-          about: true,
-          drive: false,
-          ride: false
-        }
+        options: { about: true }
       });
     }
   };

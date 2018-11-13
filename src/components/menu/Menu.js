@@ -29,7 +29,7 @@ class Menu extends PureComponent {
       },
       {
         name: 'Sign up to drive',
-        link: '/drive'
+        link: '/driver/signup'
       }
     ],
     rideMenu: [

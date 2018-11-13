@@ -1,15 +1,60 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import About from './About';
-import Drive from './Drive';
-import Ride from './Ride';
+import Option from './Option';
 import Login from './Login';
 import styles from './Menu.css';
 
 const active = { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' }
 
 class Menu extends PureComponent {
-  state = {};
+  state = {
+    aboutMenu: [
+      {
+        name: 'Overview',
+        link: '/about'
+      },
+      {
+        name: 'Safety First',
+        link: '/about'
+      },
+      {
+        name: 'Careers',
+        link: '/about'
+      }
+    ],
+    driveMenu: [
+      {
+        name: 'Overview',
+        link: '/drive'
+      },
+      {
+        name: 'How it works',
+        link: '/drive'
+      },
+      {
+        name: 'Sign up to drive',
+        link: '/drive'
+      }
+    ],
+    rideMenu: [
+      {
+        name: 'Overview',
+        link: '/ride'
+      },
+      {
+        name: 'How it works',
+        link: '/ride'
+      },
+      {
+        name: 'Price estimator',
+        link: '/ride'
+      },
+      {
+        name: 'Sign up for rides',
+        link: '/ride'
+      }
+    ]
+  };
 
   static propTypes = {
     menu: PropTypes.bool.isRequired,
@@ -34,6 +79,7 @@ class Menu extends PureComponent {
 
   render() {  
     const { about, drive, ride } = this.props.options;
+    const { aboutMenu, driveMenu, rideMenu } = this.state;
 
     return (
       <div className={styles.menu}>
@@ -58,9 +104,9 @@ class Menu extends PureComponent {
           </a>
         </nav>
         <section>
-          {about && <About onToggle={this.toggleFalse}/>}
-          {drive && <Drive onToggle={this.toggleFalse}/>}
-          {ride && <Ride onToggle={this.toggleFalse}/>}
+          {about && <Option links={aboutMenu} onToggle={this.toggleFalse}/>}
+          {drive && <Option links={driveMenu} onToggle={this.toggleFalse}/>}
+          {ride && <Option links={rideMenu} onToggle={this.toggleFalse}/>}
         </section>
       </div> 
     );

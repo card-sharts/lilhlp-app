@@ -7,7 +7,7 @@ import Auth from '../auth/Auth';
 import About from '../about/About';
 import Drive from '../drive/Drive';
 import Ride from '../ride/Ride';
-import DriverForm from '../auth/Auth/DriverForm';
+import DriverForm from '../auth/DriverForm';
 import styles from './App.css';
 
 class App extends PureComponent {

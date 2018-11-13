@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './About.css';
 
@@ -22,6 +23,14 @@ class About extends PureComponent {
       <div className={styles.about}>
         <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
         <h2>About Menu</h2>
+        <ul>
+          <li>
+            <Link to="/about">
+              Overview
+            </Link>
+          </li>
+          <li>Safety First</li>
+        </ul>
       </div>
     );
   }

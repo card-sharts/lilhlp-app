@@ -6,6 +6,8 @@ import Ride from './Ride';
 import Login from './Login';
 import styles from './Menu.css';
 
+const active = { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' }
+
 class Menu extends PureComponent {
   state = {};
 
@@ -25,19 +27,19 @@ class Menu extends PureComponent {
         <nav>
           <a 
             onClick={() => onClick({ about: true })} 
-            style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+            style={about ? active : null }
           >
             ABOUT
           </a>
           <a 
             onClick={() => onClick({ drive: true })} 
-            style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+            style={drive ? active : null }
           >
             DRIVE
           </a>
           <a 
             onClick={() => onClick({ ride: true })} 
-            style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+            style={ride ? active : null }
           >
             RIDE
           </a>

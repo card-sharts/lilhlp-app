@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Header.css';
 
+const active = { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' };
+
 class Header extends PureComponent {
   state = {};
 
@@ -23,19 +25,19 @@ class Header extends PureComponent {
           <div className='desktop-nav'>
             <a 
               onClick={() => onClick({ about: true })}
-              style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+              style={about ? active : null }
             >
               ABOUT
             </a>
             <a
               onClick={() => onClick({ drive: true })} 
-              style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+              style={drive ? active : null }
             >
               DRIVE
             </a>
             <a 
               onClick={() => onClick({ ride: true })}
-              style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+              style={ride ? active : null }
             >
               RIDE
             </a>
@@ -46,7 +48,7 @@ class Header extends PureComponent {
               <Link
                 to="/login" 
                 id="mobile-view-login"
-                style={login ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+                style={login ? active : null }
               >
                 LOG IN
               </Link>
@@ -57,7 +59,7 @@ class Header extends PureComponent {
         <Link
           to="/login" 
           id="login"
-          style={login ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+          style={login ? active : null }
         >
           LOG IN
         </Link>

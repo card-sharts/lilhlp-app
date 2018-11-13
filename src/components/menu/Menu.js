@@ -6,6 +6,8 @@ import Ride from './Ride';
 import Login from './Login';
 import styles from './Menu.css';
 
+const active = { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' }
+
 class Menu extends PureComponent {
   state = {};
 
@@ -16,36 +18,49 @@ class Menu extends PureComponent {
     onToggle: PropTypes.func.isRequired
   };
 
+  openAboutMenu = () => {
+    this.props.onClick({ about: true });
+  };
+  openDriveMenu = () => {
+    this.props.onClick({ drive: true });
+  };
+  openRideMenu = () => {
+    this.props.onClick({ ride: true });
+  };
+
+  toggleFalse = () => {
+    this.props.onToggle(false);
+  };
+
   render() {  
     const { about, drive, ride } = this.props.options;
-    const { onClick, onToggle } = this.props;
 
     return (
       <div className={styles.menu}>
         <nav>
           <a 
-            onClick={() => onClick({ about: true })} 
-            style={about ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+            onClick={this.openAboutMenu} 
+            style={about ? active : null }
           >
             ABOUT
           </a>
           <a 
-            onClick={() => onClick({ drive: true })} 
-            style={drive ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+            onClick={this.openDriveMenu} 
+            style={drive ? active : null }
           >
             DRIVE
           </a>
           <a 
-            onClick={() => onClick({ ride: true })} 
-            style={ride ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
+            onClick={this.openRideMenu} 
+            style={ride ? active : null }
           >
             RIDE
           </a>
         </nav>
         <section>
-          {about && <About onToggle={onToggle}/>}
-          {drive && <Drive onToggle={onToggle}/>}
-          {ride && <Ride onToggle={onToggle}/>}
+          {about && <About onToggle={this.toggleFalse}/>}
+          {drive && <Drive onToggle={this.toggleFalse}/>}
+          {ride && <Ride onToggle={this.toggleFalse}/>}
         </section>
       </div> 
     );

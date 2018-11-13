@@ -14,7 +14,7 @@ class Ride extends PureComponent {
     const { onToggle } = this.props;
     return (
       <div className={styles.ride}>
-        <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
+        <button id="x-mark" onClick={onToggle}>&#x2715;</button>
         <h2>Ride Menu</h2>
       </div>
     );

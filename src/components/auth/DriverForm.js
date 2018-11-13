@@ -1,20 +1,29 @@
 import React, { PureComponent } from 'react';
 
-class DriveForm extends Component {
+class DriverForm extends PureComponent {
   state = {
     email: '',
     firstName: '',
     lastName: '',
     phoneNumber: '',
-    city: '',
-    dob: ''
-  }
+    password: '',
+    city: ''
+  };
 
   onChange = ({ target }) => {
-    this.setState({ [target.name]: target.value })
-  }
+    this.setState({ [target.name]: target.value });
+  };
 
   render() { 
+    const {
+      email,
+      firstName,
+      lastName,
+      phoneNumber,
+      password,
+      city
+    } = this.state;
+
     return (
       <div>
         <form>
@@ -34,7 +43,7 @@ class DriveForm extends Component {
           />
           <input
             name="lastName"
-            value={firstName}
+            value={lastName}
             onChange={this.handleChange}
             placeholder="last name"
             required
@@ -66,9 +75,4 @@ class DriveForm extends Component {
   }
 }
  
-export default DriveFo
-<div>
-  <form>
-
-  </form>
-</div>;
+export default DriverForm;

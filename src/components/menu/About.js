@@ -11,17 +11,17 @@ class About extends PureComponent {
     onToggle: PropTypes.func.isRequired
   };
 
-  toggleDropDown = option => {
-    if(option === 'one') this.setState(({ dropDownOne }) => ({ dropDownOne: !dropDownOne }));
-    else this.setState(({ dropDownTwo }) => ({ dropDownTwo: !dropDownTwo }));
-  };
+  // toggleDropDown = option => {
+  //   if(option === 'one') this.setState(({ dropDownOne }) => ({ dropDownOne: !dropDownOne }));
+  //   else this.setState(({ dropDownTwo }) => ({ dropDownTwo: !dropDownTwo }));
+  // };
 
   render() { 
     const { onToggle } = this.props;
 
     return (
       <div className={styles.about}>
-        <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
+        <button id="x-mark" onClick={onToggle}>&#x2715;</button>
         <h2>About Menu</h2>
         <ul>
           <li>

@@ -23,28 +23,38 @@ class Header extends PureComponent {
     this.props.onToggle(true);
   };
 
+  openAboutMenu = () => {
+    this.props.onClick({ about: true });
+  };
+  openDriveMenu = () => {
+    this.props.onClick({ drive: true });
+  };
+  openRideMenu = () => {
+    this.props.onClick({ ride: true });
+  };
+
   render() {
     const { about, drive, ride, login } = this.props.options;
-    const { menu, onClick } = this.props;
+    const { menu } = this.props;
     return (
       <header className={styles.header}>
         <Link id="logo" onClick={this.toggleFalse} to="/">LILHLP</Link>
         <nav>
           <div className='desktop-nav'>
             <a 
-              onClick={() => onClick({ about: true })}
+              onClick={this.openAboutMenu}
               style={about ? active : null }
             >
               ABOUT
             </a>
             <a
-              onClick={() => onClick({ drive: true })} 
+              onClick={this.openDriveMenu} 
               style={drive ? active : null }
             >
               DRIVE
             </a>
             <a 
-              onClick={() => onClick({ ride: true })}
+              onClick={this.openRideMenu}
               style={ride ? active : null }
             >
               RIDE

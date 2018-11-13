@@ -14,7 +14,7 @@ class Drive extends PureComponent {
     const { onToggle } = this.props;
     return (
       <div className={styles.drive}>
-        <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
+        <button id="x-mark" onClick={onToggle}>&#x2715;</button>
         <h2>Drive Menu</h2>
       </div>
     );

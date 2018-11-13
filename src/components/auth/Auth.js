@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Auth.css';
+import styles from '../forms/Form.css';
 
 class Auth extends PureComponent {
   state = {
@@ -16,7 +16,7 @@ class Auth extends PureComponent {
     const { email, password } = this.state;
 
     return (
-      <div className={styles.auth}>
+      <div className={styles.form}>
         <form>
           <input
             name="email"

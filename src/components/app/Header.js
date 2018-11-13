@@ -57,6 +57,7 @@ class Header extends PureComponent {
         <Link
           to="/login" 
           id="login"
+          onClick={() => onToggle(false)}
           style={login ? { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' } : null }
         >
           LOG IN

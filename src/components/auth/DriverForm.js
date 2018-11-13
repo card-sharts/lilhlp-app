@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-class DriveForm extends Component {
+class DriveForm extends PureComponent {
   state = {
     email: '',
     firstName: '',
@@ -66,9 +66,4 @@ class DriveForm extends Component {
   }
 }
  
-export default DriveFo
-<div>
-  <form>
-
-  </form>
-</div>;
+export default DriveForm;

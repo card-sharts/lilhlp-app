@@ -15,12 +15,20 @@ class Header extends PureComponent {
     menu: PropTypes.bool.isRequired,
   };
 
+  toggleFalse = () => {
+    this.props.onToggle(false);
+  };
+
+  toggleTrue = () => {
+    this.props.onToggle(true);
+  };
+
   render() {
     const { about, drive, ride, login } = this.props.options;
-    const { menu, onToggle, onClick } = this.props;
+    const { menu, onClick } = this.props;
     return (
       <header className={styles.header}>
-        <Link id="logo" onClick={() => onToggle(false)} to="/">LILHLP</Link>
+        <Link id="logo" onClick={this.toggleFalse} to="/">LILHLP</Link>
         <nav>
           <div className='desktop-nav'>
             <a 
@@ -43,7 +51,7 @@ class Header extends PureComponent {
             </a>
           </div>
           {menu 
-            ? <button id="x-mark" onClick={() => onToggle(false)}>&#x2715;</button>
+            ? <button id="x-mark" onClick={this.toggleFalse}>&#x2715;</button>
             : <div>
               <Link
                 to="/login" 
@@ -52,14 +60,14 @@ class Header extends PureComponent {
               >
                 LOG IN
               </Link>
-              <button id="hamburger" onClick={() => onToggle(true)}>&#9776;</button>
+              <button id="hamburger" onClick={this.toggleTrue}>&#9776;</button>
             </div>
           }
         </nav>
         <Link
           to="/login" 
           id="login"
-          onClick={() => onToggle(false)}
+          onClick={this.toggleFalse}
           style={login ? active : null }
         >
           LOG IN

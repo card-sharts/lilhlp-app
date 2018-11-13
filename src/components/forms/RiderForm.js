@@ -7,7 +7,6 @@ class RiderForm extends PureComponent {
     email: '',
     firstName: '',
     lastName: '',
-    kids: '',
     phoneNumber: '',
     password: '',
     city: ''
@@ -22,7 +21,6 @@ class RiderForm extends PureComponent {
       email,
       firstName,
       lastName,
-      kids,
       phoneNumber,
       password,
       city
@@ -53,13 +51,6 @@ class RiderForm extends PureComponent {
             placeholder="last name"
             required
           />
-          <select>
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4+</option>
-          </select>
           <input
             name="phoneNumber"
             value={phoneNumber}

@@ -1,0 +1,15 @@
+:local(.about) {
+  section {
+    margin: 50px;
+    padding-bottom: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+    line-height: 1.5em;
+
+    h2 {
+      margin-bottom: 30px;
+    }
+    
+  }
+}

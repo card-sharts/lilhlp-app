@@ -57,7 +57,7 @@ class App extends PureComponent {
               options={options}
             />
           </div>
-          <main>
+          <main style={menu ? { display: 'none' } : null}>
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route exact path="/login" component={Auth}/>

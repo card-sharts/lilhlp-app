@@ -15,7 +15,11 @@ class Menu extends PureComponent {
       },
       {
         name: 'Safety First',
-        link: '/about'
+        link: '/about#vehicle'
+      },
+      {
+        name: 'Meet our drivers',
+        link: '/about/drivers'
       },
     ],
     driveMenu: [
@@ -29,7 +33,7 @@ class Menu extends PureComponent {
       },
       {
         name: 'Sign up to drive',
-        link: '/drive'
+        link: '/driver/signup'
       }
     ],
     rideMenu: [

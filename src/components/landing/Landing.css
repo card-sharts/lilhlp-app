@@ -1,0 +1,14 @@
+:local(.landing) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 90vh; */
+
+  header {
+    margin: 10px;
+  }
+
+  ul {
+    padding: 0;
+  }
+}

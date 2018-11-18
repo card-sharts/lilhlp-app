@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import MenuLinks from '../menu/MenuLinks';
 import styles from './Header.css';
 
 const active = { borderBottom: 'solid thin #08d9d6', color: '#08d9d6' };
@@ -25,35 +26,21 @@ class Header extends PureComponent {
   };
 
   render() {
-    const { about, drive, ride, login } = this.props.menuOptions;
-    const { menu } = this.props;
+    const { login } = this.props.menuOptions;
+    const { menu, onToggle, menuOptions } = this.props;
     return (
       <header className={styles.header}>
-        <Link id="logo" onClick={menu ? this.props.onToggle : null} to="/">LILHLP</Link>
+        <Link id="logo" onClick={menu ? onToggle : null} to="/">LILHLP</Link>
         <nav>
           <div className='desktop-nav'>
-            <a 
-              onClick={this.openAboutMenu}
-              style={about ? active : null }
-            >
-              ABOUT
-            </a>
-            <a
-              onClick={this.openDriveMenu} 
-              style={drive ? active : null }
-            >
-              DRIVE
-            </a>
-            <a 
-              onClick={this.openRideMenu}
-              style={ride ? active : null }
-            >
-              RIDE
-            </a>
+            <MenuLinks 
+              menuOptions={menuOptions}
+              onToggle={onToggle}
+            />
           </div>
           {menu 
             ? <button 
-              id="x-mark" onClick={this.props.onToggle}
+              id="x-mark" onClick={onToggle}
               style={{ color: '#08d9d6' }}
             >&#x2715;</button>
             : <div>
@@ -64,14 +51,14 @@ class Header extends PureComponent {
               >
                 LOG IN
               </Link>
-              <button id="hamburger" onClick={this.props.onToggle}>&#9776;</button>
+              <button id="hamburger" onClick={onToggle}>&#9776;</button>
             </div>
           }
         </nav>
         <Link
           to="/login" 
           id="login"
-          onClick={menu ? this.props.onToggle : null}
+          onClick={menu ? onToggle : null}
           style={login ? active : null }
         >
           LOG IN

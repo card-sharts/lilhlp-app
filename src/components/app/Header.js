@@ -10,35 +10,26 @@ class Header extends PureComponent {
 
   static propTypes = {
     onToggle: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired,
-    options: PropTypes.object,
+    menuOptions: PropTypes.object,
     menu: PropTypes.bool.isRequired,
   };
 
-  toggleFalse = () => {
-    this.props.onToggle(false);
-  };
-
-  toggleTrue = () => {
-    this.props.onToggle(true);
-  };
-
   openAboutMenu = () => {
-    this.props.onClick({ about: true });
+    this.props.onToggle(event, { about: true });
   };
   openDriveMenu = () => {
-    this.props.onClick({ drive: true });
+    this.props.onToggle(event, { drive: true });
   };
   openRideMenu = () => {
-    this.props.onClick({ ride: true });
+    this.props.onToggle(event, { ride: true });
   };
 
   render() {
-    const { about, drive, ride, login } = this.props.options;
+    const { about, drive, ride, login } = this.props.menuOptions;
     const { menu } = this.props;
     return (
       <header className={styles.header}>
-        <Link id="logo" onClick={this.toggleFalse} to="/">LILHLP</Link>
+        <Link id="logo" onClick={menu ? this.props.onToggle : null} to="/">LILHLP</Link>
         <nav>
           <div className='desktop-nav'>
             <a 
@@ -61,7 +52,10 @@ class Header extends PureComponent {
             </a>
           </div>
           {menu 
-            ? <button id="x-mark" onClick={this.toggleFalse}>&#x2715;</button>
+            ? <button 
+              id="x-mark" onClick={this.props.onToggle}
+              style={{ color: '#08d9d6' }}
+            >&#x2715;</button>
             : <div>
               <Link
                 to="/login" 
@@ -70,14 +64,14 @@ class Header extends PureComponent {
               >
                 LOG IN
               </Link>
-              <button id="hamburger" onClick={this.toggleTrue}>&#9776;</button>
+              <button id="hamburger" onClick={this.props.onToggle}>&#9776;</button>
             </div>
           }
         </nav>
         <Link
           to="/login" 
           id="login"
-          onClick={this.toggleFalse}
+          onClick={menu ? this.props.onToggle : null}
           style={login ? active : null }
         >
           LOG IN

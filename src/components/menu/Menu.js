@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Option from './Option';
+import Options from './Option';
 import Login from './Login';
 import styles from './Menu.css';
 
@@ -57,28 +57,22 @@ class Menu extends PureComponent {
   };
 
   static propTypes = {
-    menu: PropTypes.bool.isRequired,
-    options: PropTypes.object.isRequired,
-    onClick: PropTypes.func.isRequired,
+    menuOptions: PropTypes.object.isRequired,
     onToggle: PropTypes.func.isRequired
   };
 
   openAboutMenu = () => {
-    this.props.onClick({ about: true });
+    this.props.onToggle(event, { about: true });
   };
   openDriveMenu = () => {
-    this.props.onClick({ drive: true });
+    this.props.onToggle(event, { drive: true });
   };
   openRideMenu = () => {
-    this.props.onClick({ ride: true });
-  };
-
-  toggleFalse = () => {
-    this.props.onToggle(false);
+    this.props.onToggle(event, { ride: true });
   };
 
   render() {  
-    const { about, drive, ride } = this.props.options;
+    const { about, drive, ride } = this.props.menuOptions;
     const { aboutMenu, driveMenu, rideMenu } = this.state;
 
     return (
@@ -104,9 +98,9 @@ class Menu extends PureComponent {
           </a>
         </nav>
         <section>
-          {about && <Option links={aboutMenu} onToggle={this.toggleFalse}/>}
-          {drive && <Option links={driveMenu} onToggle={this.toggleFalse}/>}
-          {ride && <Option links={rideMenu} onToggle={this.toggleFalse}/>}
+          {about && <Options links={aboutMenu} onToggle={this.props.onToggle}/>}
+          {drive && <Options links={driveMenu} onToggle={this.props.onToggle}/>}
+          {ride && <Options links={rideMenu} onToggle={this.props.onToggle}/>}
         </section>
       </div> 
     );

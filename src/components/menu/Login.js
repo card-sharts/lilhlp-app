@@ -11,7 +11,6 @@ class Login extends PureComponent {
     onToggle: PropTypes.func.isRequired
   };
 
-
   render() { 
     const { onToggle } = this.props;
 

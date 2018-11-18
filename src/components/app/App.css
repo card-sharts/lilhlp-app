@@ -1,22 +1,30 @@
 :local(.app) {
-  header {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-rows: 10vh auto 5vh; 
+
+  footer {
     text-align: center;
   }
 
   .menu-closed {
+    top: 10vh;
     height: 0;
     width: 100%;
     position: fixed;
-    transition: 0.5s;
+    transition: 0.2s;
     overflow-y: hidden;
     z-index: 1;
   }
 
   .menu-open {
-    height: 90vh;
+    display: 'initial';
+    top: 10vh;
+    height: 100%;
     width: 100%;
     position: fixed;
-    transition: 0.5s;
+    transition: .5s;
     overflow-y: hidden;
     z-index: 1;
   }

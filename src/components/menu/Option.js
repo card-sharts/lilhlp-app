@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './option.css';
 
-class About extends PureComponent {
+class Options extends PureComponent {
 
   static propTypes = {
     onToggle: PropTypes.func.isRequired,
@@ -32,4 +32,4 @@ class About extends PureComponent {
   }
 }
  
-export default About;
+export default Options;
